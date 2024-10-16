@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:34:36 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/15 13:39:45 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/16 17:13:13 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	j = 0;
 	if (!little[0])
-		return (big);
+		return ((char *) big);
 	while (big[i])
 	{
 		j = 0;
 		while ((big[i + j] == little[j]) && little[j] && j < len)
 			j++;
 		if (little[j] == 0)
-			return (&big[i]);
+			return ((char *) &big[i]);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:20:56 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/15 16:12:23 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/16 17:09:39 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	s1_size = ft_strlen(s1);
 	s2_size = ft_strlen(s2);
-	ret = ((s1_size + s2_size + 1) * sizeof(char));
+	ret = malloc((s1_size + s2_size + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);
 	while (i < s1_size)

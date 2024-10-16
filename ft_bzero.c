@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:10:49 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/15 12:20:33 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:58:41 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		str[i] = 0;
 		i++;
 	}
-	return (s);
 }
