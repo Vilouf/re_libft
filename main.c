@@ -2,8 +2,26 @@
 #include <string.h>
 #include "libft.h"
 
-int	main(int ac, char **av)
+// static void	ft_free(char **tab)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (tab[i])
+// 	{
+// 		free(tab[i]);
+// 		i++;
+// 	}
+// 	free(tab);
+// }
+
+int	main(void)
 {
-	printf("VRAI %d\n", atoi(av[ac - 1]));
-	printf("FAUX %d\n", ft_atoi(av[ac - 1]));
+	char	*test;
+	int		i;
+
+	scanf("%d", &i);
+	test = ft_itoa(i);
+	printf("Result: %s\n", test);
+	free(test);
 }

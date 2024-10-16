@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 13:49:41 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/16 15:22:07 by vielblin         ###   ########.fr       */
+/*   Created: 2024/10/15 14:17:32 by vielblin          #+#    #+#             */
+/*   Updated: 2024/10/16 15:22:29 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ret;
 	size_t	i;
+	char	*ret;
 
-	if (nmemb == 0 || size == 0)
-		return (malloc(1));
 	i = 0;
-	ret = malloc(nmemb * size);
-	ft_bzero(ret, nmemb);
+	ret = malloc((len + 1) * sizeof(char));
+	if (!ret)
+		return (NULL);
+	while (i < len)
+	{
+		ret[i] = s[start];
+		i++;
+		start++;
+	}
 	return (ret);
 }
