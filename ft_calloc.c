@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:49:41 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/16 15:22:07 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/19 03:04:36 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ret;
-	size_t	i;
 
 	if (nmemb == 0 || size == 0)
-		return (malloc(1));
-	i = 0;
-	ret = malloc(nmemb * size);
-	ft_bzero(ret, nmemb);
+	{
+		nmemb = 1;
+		size = 1;
+	}
+	ret = (char *)malloc(nmemb * size);
+	if (!ret)
+		return (NULL);
+	ft_bzero(ret, nmemb * size);
 	return (ret);
 }

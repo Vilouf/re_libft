@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 18:13:41 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/16 18:27:44 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:17:12 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
+
 	while (*lst)
 	{
 		tmp = *lst;

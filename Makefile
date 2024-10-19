@@ -6,7 +6,7 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/16 17:23:52 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/18 23:02:12 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ all: $(NAME)
 $(NAME):
 	cc -c -Wall -Wextra -Werror $(SRC)
 	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
@@ -36,3 +35,11 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test:
+	cc -Wall -Wextra -Werror -lbsd main.c libft.a
+	./a.out
+
+ftest:
+	cc -Wall -Wextra -Werror -fsanitize=address -g3 -lbsd main.c libft.a
+	./a.out

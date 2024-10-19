@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 18:32:18 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/16 19:38:04 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:17:29 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*first;
-	
+
 	first = NULL;
 	while (lst)
 	{
