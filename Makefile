@@ -6,7 +6,7 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/20 00:37:26 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/20 19:42:22 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(NAME) $(BOBJ)
-	ar r $(NAME) $(BOBJ)
+bonus: $(OBJ) $(BOBJ)
+	ar rc $(NAME) $(OBJ) $(BOBJ)
 
 clean:
 	rm -f $(OBJ) $(BOBJ)
@@ -48,6 +48,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+#test rules to delete before push
 
 test:
 	$(CC) -lbsd main.c libft.a

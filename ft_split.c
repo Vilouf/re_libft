@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:42:57 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/20 00:16:20 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/20 22:52:49 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	size_t		j;
 	size_t		start;
 
+	if (!s)
+		return (NULL);
 	result = alloc_words(s, c);
 	if (!result)
 		return (NULL);

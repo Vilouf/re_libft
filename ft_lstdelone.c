@@ -6,7 +6,7 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 17:45:00 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/16 17:53:57 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/20 22:08:09 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	(*del)(lst->content);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
 	free(lst);
 }
