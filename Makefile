@@ -6,11 +6,13 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/18 23:02:12 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/20 00:37:26 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = cc -Wall -Wextra -Werror
 
 SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -22,14 +24,25 @@ SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 OBJ = $(SRC:.c=.o)
 
+BSRC = 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+		ft_lstmap.c
+
+BOBJ = $(BSRC:.c=.o)
+
+%.o: %.c
+	$(CC) -c $< -o $@
+
 all: $(NAME)
 
-$(NAME):
-	cc -c -Wall -Wextra -Werror $(SRC)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
+bonus: $(NAME) $(BOBJ)
+	ar r $(NAME) $(BOBJ)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -37,9 +50,9 @@ fclean: clean
 re: fclean all
 
 test:
-	cc -Wall -Wextra -Werror -lbsd main.c libft.a
+	$(CC) -lbsd main.c libft.a
 	./a.out
 
 ftest:
-	cc -Wall -Wextra -Werror -fsanitize=address -g3 -lbsd main.c libft.a
+	$(CC) -fsanitize=address -g3 -lbsd main.c libft.a
 	./a.out
