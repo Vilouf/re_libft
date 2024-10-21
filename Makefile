@@ -6,7 +6,7 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/20 19:42:22 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/22 01:19:09 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,4 @@ fclean: clean
 
 re: fclean all
 
-#test rules to delete before push
-
-test:
-	$(CC) -lbsd main.c libft.a
-	./a.out
-
-ftest:
-	$(CC) -fsanitize=address -g3 -lbsd main.c libft.a
-	./a.out
+.PHONY: all clean fclean re bonus

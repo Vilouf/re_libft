@@ -6,14 +6,12 @@
 /*   By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:18:02 by vielblin          #+#    #+#             */
-/*   Updated: 2024/10/17 17:59:57 by vielblin         ###   ########.fr       */
+/*   Updated: 2024/10/22 01:09:50 by vielblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <stdio.h> //TO REMOVE OR CONSEQUENCES
 
 # include <stdlib.h>
 # include <unistd.h>
