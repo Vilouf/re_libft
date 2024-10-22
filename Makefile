@@ -6,7 +6,7 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/22 01:19:09 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/22 16:57:39 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,5 +48,10 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+#A SUPPRIMER APRES TEST
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BSRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 .PHONY: all clean fclean re bonus
