@@ -6,7 +6,7 @@
 #    By: vielblin <vielblin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 12:08:07 by vielblin          #+#    #+#              #
-#    Updated: 2024/10/22 16:57:39 by vielblin         ###   ########.fr        #
+#    Updated: 2024/10/28 02:49:40 by vielblin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,26 +20,20 @@ SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-OBJ = $(SRC:.c=.o)
-
-BSRC = 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		ft_lstmap.c
 
-BOBJ = $(BSRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-%.o: %.c
+.c.o:
 	$(CC) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
-
-bonus: $(OBJ) $(BOBJ)
-	ar rc $(NAME) $(OBJ) $(BOBJ)
 
 clean:
 	rm -f $(OBJ) $(BOBJ)
@@ -48,10 +42,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-#A SUPPRIMER APRES TEST
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BSRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 .PHONY: all clean fclean re bonus
